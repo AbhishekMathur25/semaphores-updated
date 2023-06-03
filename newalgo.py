@@ -13,8 +13,6 @@ def run_process(process):
 List=[["p1",1,10],["p2",0,28],["p3",1,78],["p4",0,100],["p5",1,45],["p6",0,78]]
 threads = []
 
-List = [["p1", 1, 10], ["p2", 0, 28], ["p3", 1, 78], ["p4", 0, 100], ["p5", 1, 45], ["p6", 0, 78]]
-
 sjf_list = sorted(List, key=lambda x: x[2])
 
 
