@@ -10,13 +10,17 @@ def run_process(process):
     print(f'Finished {process}')
     semaphore.release()
 
-List=[["p1",1],["p2",0],["p3",1],["p4",0],["p5",1],["p6",0]]
+List=[["p1",1,10],["p2",0,28],["p3",1,78],["p4",0,100],["p5",1,45],["p6",0,78]]
 threads = []
+
+List = [["p1", 1, 10], ["p2", 0, 28], ["p3", 1, 78], ["p4", 0, 100], ["p5", 1, 45], ["p6", 0, 78]]
+
+sjf_list = sorted(List, key=lambda x: x[2])
 
 
 h=[]
 l=[]
-for items in List:
+for items in sjf_list:
     if((items[1])==1):
         h.append(items[0])
     else:
@@ -38,4 +42,4 @@ for thread in h:
 for thread in l:
     run_process(thread)      
 
-print('All processes finished.')
+print('All processes finished.')        
